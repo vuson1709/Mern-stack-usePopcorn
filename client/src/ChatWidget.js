@@ -11,7 +11,7 @@ import {
   ConversationHeader,
   Avatar,
 } from "@chatscope/chat-ui-kit-react";
-// import "./ChatWidget.css";hatWidget.css";
+import "./ChatWidget.css";
 
 const API_KEY = `${process.env.REACT_APP_API_KEY}`;
 
