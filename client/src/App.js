@@ -1,9 +1,11 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import StarRating from "./StarRating";
 import { useMovies } from "./useMovies";
 import { useLocalStorage } from "./useLocalStorage";
 import { useKey } from "./useKey";
 import ChatWidget from "./ChatWidget";
+import Signup from "./Components/Signup";
 
 const tempMovieData = [
   {
@@ -92,7 +94,12 @@ export default function App() {
   }
 
   return (
-    <>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/Signup" element={<Signup />}></Route>
+      </Routes>
+    </BrowserRouter>
+    /* <>
       <NavBar>
         <Logo />
         <SearchBar
@@ -138,7 +145,7 @@ export default function App() {
 
         <ChatWidget />
       </Main>
-    </>
+    </> */
   );
 }
 
