@@ -6,6 +6,7 @@ import { useLocalStorage } from "./useLocalStorage";
 import { useKey } from "./useKey";
 import ChatWidget from "./ChatWidget";
 import Signup from "./Components/Signup";
+import Login from "./Components/Login";
 
 const tempMovieData = [
   {
@@ -96,7 +97,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/Signup" element={<Signup />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/login" element={<Login />}></Route>
       </Routes>
     </BrowserRouter>
     /* <>

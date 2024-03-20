@@ -3,28 +3,24 @@ import "./Signup.css";
 import Axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function Signup() {
-  const [username, setUsername] = useState("");
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
 
+  Axios.defaults.withCredentials = true;
+
   function handleSubmitForm(e) {
     e.preventDefault();
-
-    // Prevent when user not enter
-    if (!username || !email || !password) return;
-
-    Axios.post("http://localhost:3000/auth/signup", {
-      username,
+    Axios.post("http://localhost:3000/auth/login", {
       email,
       password,
     })
       .then((res) => {
         console.log(res.data);
         if (res.data.status) {
-          navigate("/login");
+          navigate("/home");
         }
       })
       .catch((err) => console.log(err));
@@ -38,15 +34,7 @@ export default function Signup() {
   return (
     <div className="sign-up-container">
       <form action="sign-up-form" onSubmit={handleSubmitForm}>
-        <h2>Sign up</h2>
-
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+        <h2>Login</h2>
 
         <label htmlFor="email">Email:</label>
         <input
@@ -65,10 +53,10 @@ export default function Signup() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button type="submit">Sign Up</button>
+        <button type="submit">Login</button>
         <p>
-          Have an Account?
-          <Link to="/login">Login</Link>
+          Don't have an Account?
+          <Link to="/signup">Sign up</Link>
         </p>
       </form>
     </div>
