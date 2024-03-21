@@ -10,6 +10,7 @@ import Login from "./Components/Login";
 import Home from "./Components/Home";
 import ForgotPassword from "./Components/ForgotPassword";
 import ResetPassword from "./Components/ResetPassword";
+import DashBoard from "./Components/DashBoard";
 
 const tempMovieData = [
   {
@@ -105,6 +106,7 @@ export default function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/forgotPassword" element={<ForgotPassword />}></Route>
         <Route path="/resetPassword/:token" element={<ResetPassword />}></Route>
+        <Route path="/dashboard" element={<DashBoard />}></Route>
       </Routes>
     </BrowserRouter>
     /* <>
