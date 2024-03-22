@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Signup.css";
 import Axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import Logo from "../Main/Logo";
 
 export default function Signup() {
   const [username, setUsername] = useState("");
@@ -37,6 +38,9 @@ export default function Signup() {
 
   return (
     <div className="sign-up-container">
+      <Link to="/" className="middle">
+        <Logo />
+      </Link>
       <form action="sign-up-form" onSubmit={handleSubmitForm}>
         <h2>Sign up</h2>
 

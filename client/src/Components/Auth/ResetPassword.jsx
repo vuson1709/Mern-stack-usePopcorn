@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Signup.css";
 import Axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import Logo from "../Main/Logo";
 
 export default function ResetPassword() {
   const [password, setPassword] = useState("");
@@ -28,6 +29,9 @@ export default function ResetPassword() {
 
   return (
     <div className="sign-up-container">
+      <Link to="/" className="middle">
+        <Logo />
+      </Link>
       <form action="sign-up-form" onSubmit={handleSubmitForm}>
         <h2>Forgot Password</h2>
 

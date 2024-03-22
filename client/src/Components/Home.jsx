@@ -8,6 +8,7 @@ import { useLocalStorage } from "../customHooks/useLocalStorage";
 import { useKey } from "../customHooks/useKey";
 import ChatWidget from "./ChatWidget/ChatWidget";
 import "./Home.css";
+import Logo from "./Main/Logo.jsx";
 
 // export default function Home() {
 //   const navigate = useNavigate();
@@ -178,15 +179,6 @@ export default function Home() {
 
 function NavBar({ children }) {
   return <nav className="nav-bar">{children}</nav>;
-}
-
-function Logo() {
-  return (
-    <div className="logo">
-      <span role="img">🍿</span>
-      <h1>usePopcorn</h1>
-    </div>
-  );
 }
 
 function SearchBar({ query, setQuery, onCloseMovieDetails }) {
