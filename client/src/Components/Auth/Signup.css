@@ -1,13 +1,13 @@
 body {
-  color: #000;
+  /* color: #000;
   height: 100vh;
   background-color: #fff;
 
   display: grid;
-  place-content: center;
+  place-content: center; */
 }
 
-h2 {
+form h2 {
   text-align: center;
   font-size: 3rem;
   margin-bottom: 0.75em;
@@ -33,7 +33,7 @@ label {
   margin-bottom: 0.25em;
 }
 
-input {
+form input {
   width: 100%;
   padding: 0.5em;
   margin-bottom: 1.125em;
@@ -41,16 +41,16 @@ input {
   border: 1px solid gray;
 }
 
-button:hover {
+form button:hover {
   cursor: pointer;
   box-shadow: 0 2px 20px 1px hsla(34, 78%, 85%, 0.6);
 }
 
-button:active {
+form button:active {
   box-shadow: 0 2px 20px 6px hsla(34, 78%, 85%, 0.6);
 }
 
-button {
+form button {
   border: 1px solid transparent;
   background-color: hsl(34, 78%, 91%);
   color: rgba(0, 0, 0, 0.7);

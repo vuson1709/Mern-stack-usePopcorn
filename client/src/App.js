@@ -1,18 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect, useState, useRef } from "react";
-import StarRating from "./StarRating";
-import { useMovies } from "./useMovies";
-import { useLocalStorage } from "./useLocalStorage";
-import { useKey } from "./useKey";
-import ChatWidget from "./ChatWidget";
-import Signup from "./Components/Signup";
-import Login from "./Components/Login";
+// import { useEffect, useState, useRef } from "react";
+// import StarRating from "./Components/StarRating/StarRating";
+// import { useMovies } from "./useMovies";
+// import { useLocalStorage } from "./useLocalStorage";
+// import { useKey } from "./useKey";
+// import ChatWidget from "./Components/ChatWidget/ChatWidget";
+import Signup from "./Components/Auth/Signup";
+import Login from "./Components/Auth/Login";
 import Home from "./Components/Home";
-import ForgotPassword from "./Components/ForgotPassword";
-import ResetPassword from "./Components/ResetPassword";
-import DashBoard from "./Components/DashBoard";
+import ForgotPassword from "./Components/Auth/ForgotPassword";
+import ResetPassword from "./Components/Auth/ResetPassword";
+import DashBoard from "./Components/Auth/DashBoard";
 
-const tempMovieData = [
+/* const tempMovieData = [
   {
     imdbID: "tt1375666",
     Title: "Inception",
@@ -62,10 +62,10 @@ const tempWatchedData = [
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
-const KEY = "77557d42";
+const KEY = "77557d42"; */
 
 export default function App() {
-  const [query, setQuery] = useState("inception");
+  /* const [query, setQuery] = useState("inception");
   const [selectMovieId, setSelectMovieId] = useState(null);
 
   const [watched, setWatched] = useLocalStorage([], "watched");
@@ -96,7 +96,7 @@ export default function App() {
     setWatched((watched) =>
       watched.filter((movie) => movie.imdbID !== movieId)
     );
-  }
+  } */
 
   return (
     <BrowserRouter>
@@ -159,7 +159,7 @@ export default function App() {
   );
 }
 
-function NavBar({ children }) {
+/* function NavBar({ children }) {
   return <nav className="nav-bar">{children}</nav>;
 }
 
@@ -442,3 +442,4 @@ function SearchedMoviesList({ movies, onSelectMovieId }) {
     </ul>
   );
 }
+ */
