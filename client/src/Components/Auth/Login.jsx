@@ -54,10 +54,14 @@ export default function Login() {
         />
 
         <button type="submit">Login</button>
-        <Link to="/forgotPassword">Forgot Password?</Link>
-        <p>
+        <Link to="/forgotPassword" className="forgot-password">
+          Forgot Password?
+        </Link>
+        <p className="have-account">
           Don't have an Account?
-          <Link to="/signup">Sign up</Link>
+          <Link to="/signup" className="sign-up">
+            Sign up
+          </Link>
         </p>
       </form>
     </div>

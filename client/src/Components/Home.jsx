@@ -134,6 +134,7 @@ export default function Home() {
           onCloseMovieDetails={handleCloseMovieDetails}
         />
         <NumberResults movies={movies} />
+        <DisplayLogin />
       </NavBar>
 
       <Main>
@@ -169,7 +170,7 @@ export default function Home() {
           )}
         </Box>
 
-        <ChatWidget />
+        {/* <ChatWidget /> */}
       </Main>
     </>
   );
@@ -221,6 +222,14 @@ function NumberResults({ movies }) {
     <p className="num-results">
       Found <strong>{movies?.length || 0}</strong> results
     </p>
+  );
+}
+
+function DisplayLogin() {
+  return (
+    <Link to="/login" className="display-login">
+      Login / Signup
+    </Link>
   );
 }
 

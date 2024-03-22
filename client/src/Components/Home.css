@@ -119,6 +119,22 @@ body {
   font-size: 1.8rem;
 }
 
+.display-login:hover {
+  background-color: var(--color-background-100);
+}
+
+.display-login {
+  display: inline-block;
+  padding: 3px 6px;
+  position: absolute;
+  font-size: 1.4rem;
+  top: 0;
+  right: 45px;
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: 7px;
+}
+
 .btn-toggle {
   position: absolute;
   top: 0.8rem;
