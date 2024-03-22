@@ -7,9 +7,15 @@ import nodemailer from "nodemailer";
 
 router.post("/signup", async (req, res) => {
   const { username, email, password } = req.body;
-  const user = await User.findOne({ email });
-  if (user) {
-    return res.json({ message: "user already existed" });
+  const checkUsername = await User.findOne({ username });
+  const checkEmail = await User.findOne({ email });
+
+  if (checkUsername) {
+    return res.json({ message: "username already existed" });
+  }
+
+  if (checkEmail) {
+    return res.json({ message: "Email already existed" });
   }
 
   const hashPassword = await bcryt.hash(password, 10);
@@ -89,6 +95,30 @@ router.post("/reset-password/:token", async (req, res) => {
   } catch (err) {
     return res.json("invalid token");
   }
+});
+
+async function verifyUser(req, res, next) {
+  try {
+    const token = req.cookies.token;
+    if (!token) {
+      return res.json({ status: false, message: "no token" });
+    }
+
+    // Verify token
+    const decoded = await jwt.verify(token, process.env.KEY);
+    next();
+  } catch (err) {
+    return res.json(err);
+  }
+}
+
+router.get("/verify", verifyUser, (req, res) => {
+  return res.json({ status: true, message: "authorized" });
+});
+
+router.get("/logout", (req, res) => {
+  res.clearCookie("token");
+  return res.json({ status: true });
 });
 
 export { router as UserRouter };
