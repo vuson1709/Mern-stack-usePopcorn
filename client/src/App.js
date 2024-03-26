@@ -11,6 +11,7 @@ import Home from "./Components/Home";
 import ForgotPassword from "./Components/Auth/ForgotPassword";
 import ResetPassword from "./Components/Auth/ResetPassword";
 import DashBoard from "./Components/Auth/DashBoard";
+import Logout from "./Components/Auth/Logout";
 
 /* const tempMovieData = [
   {

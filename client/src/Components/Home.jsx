@@ -9,35 +9,7 @@ import { useKey } from "../customHooks/useKey";
 import ChatWidget from "./ChatWidget/ChatWidget";
 import "./Home.css";
 import Logo from "./Main/Logo.jsx";
-
-// export default function Home() {
-//   const navigate = useNavigate();
-
-//   axios.defaults.withCredentials = true;
-//   function handleLogout() {
-//     axios
-//       .get("http://localhost:3000/auth/logout")
-//       .then((res) => {
-//         if (res.data.status) {
-//           navigate("/login");
-//         }
-//       })
-//       .catch((err) => console.log(err));
-//   }
-
-//   return (
-//     <div>
-//       Home
-//       <button>
-//         <Link to="/dashboard">Dashboard</Link> <br /> <br />
-//       </button>
-//       <button>
-//         <Link to="/login">Login</Link>
-//       </button>
-//       <button onClick={handleLogout}>Logout</button>
-//     </div>
-//   );
-// }
+import Logout from "./Auth/Logout.jsx";
 
 const tempMovieData = [
   {
@@ -136,6 +108,7 @@ export default function Home() {
         />
         <NumberResults movies={movies} />
         <DisplayLogin />
+        <Logout />
       </NavBar>
 
       <Main>

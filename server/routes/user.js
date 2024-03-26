@@ -118,7 +118,7 @@ router.get("/verify", verifyUser, (req, res) => {
 
 router.get("/logout", (req, res) => {
   res.clearCookie("token");
-  return res.json({ status: true });
+  return res.json({ status: true, message: "logout successfully" });
 });
 
 export { router as UserRouter };
