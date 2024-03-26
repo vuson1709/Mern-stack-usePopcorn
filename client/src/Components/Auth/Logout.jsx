@@ -1,9 +1,6 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 export default function Logout() {
-  const navigate = useNavigate();
-
   axios.defaults.withCredentials = true;
   function handleLogout() {
     axios
@@ -11,6 +8,7 @@ export default function Logout() {
       .then((res) => {
         if (res.data.status) {
           console.log(res.data);
+          localStorage.removeItem("user");
           // navigate("/");
           window.location.reload();
         }

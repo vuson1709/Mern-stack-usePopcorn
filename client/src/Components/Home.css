@@ -136,6 +136,10 @@ body {
   border-radius: 7px;
 }
 
+.login-success {
+  right: 110px;
+}
+
 .logout button {
   background-color: unset;
   border: none;
@@ -146,7 +150,7 @@ body {
   color: var(--color-text);
   border-radius: 7px;
   top: 1px;
-  right: 150px;
+  right: 50px;
 }
 
 /*      */

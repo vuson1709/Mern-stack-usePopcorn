@@ -66,13 +66,20 @@ const KEY = "77557d42";
 export default function Home() {
   const [query, setQuery] = useState("inception");
   const [selectMovieId, setSelectMovieId] = useState(null);
-
   const [watched, setWatched] = useLocalStorage([], "watched");
-
   const { isLoading, error, movies } = useMovies(
     query,
     handleCloseMovieDetails
   );
+  const [user, setUser] = useState({});
+
+  // Retrieve user information after success login from localStorage
+  useEffect(() => {
+    const userData = localStorage.getItem("user");
+    console.log(userData);
+    if (!userData) return;
+    setUser(JSON.parse(userData));
+  }, []);
 
   function handleSelectMovieId(movieId) {
     setSelectMovieId((selectMovieId) =>
@@ -107,8 +114,8 @@ export default function Home() {
           onCloseMovieDetails={handleCloseMovieDetails}
         />
         <NumberResults movies={movies} />
-        <DisplayLogin />
-        <Logout />
+        <DisplayLogin username={user.username} />
+        {user?.username && <Logout />}
       </NavBar>
 
       <Main>
@@ -190,8 +197,10 @@ function NumberResults({ movies }) {
   );
 }
 
-function DisplayLogin() {
-  return (
+function DisplayLogin({ username }) {
+  return username ? (
+    <p className="display-login login-success">Hello, {username}</p>
+  ) : (
     <Link to="/login" className="display-login">
       Login / Signup
     </Link>

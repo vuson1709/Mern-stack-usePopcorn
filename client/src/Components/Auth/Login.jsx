@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Signup.css";
 import Axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
@@ -9,8 +9,15 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
-
   Axios.defaults.withCredentials = true;
+
+  // Check if user already logged in
+  useEffect(() => {
+    const userData = localStorage.getItem("user");
+    const user = userData ? JSON.parse(userData) : null;
+
+    if (user && user?.username) navigate("/");
+  }, [navigate]);
 
   function handleSubmitForm(e) {
     e.preventDefault();
@@ -21,7 +28,12 @@ export default function Login() {
       .then((res) => {
         console.log(res.data);
         if (res.data.status) {
+          const user = localStorage.setItem(
+            "user",
+            JSON.stringify(res.data.user)
+          );
           navigate("/");
+          console.log(user);
         }
       })
       .catch((err) => console.log(err));

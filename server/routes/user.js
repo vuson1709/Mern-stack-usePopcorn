@@ -41,7 +41,17 @@ router.post("/login", async (req, res) => {
     expiresIn: "1h",
   });
   res.cookie("token", token, { httpOnly: true, maxAge: 360000 });
-  return res.json({ status: true, message: "login successfully" });
+  return res.json({
+    status: true,
+    message: "login successfully",
+
+    user: {
+      username: user.username,
+      email: user.email,
+      id: user._id,
+      token,
+    },
+  });
 });
 
 router.post("/forgot-password", async (req, res) => {
