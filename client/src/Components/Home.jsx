@@ -64,7 +64,7 @@ const average = (arr) =>
 const KEY = "77557d42";
 
 export default function Home() {
-  const [query, setQuery] = useState("inception");
+  const [query, setQuery] = useState("");
   const [selectMovieId, setSelectMovieId] = useState(null);
   const [watched, setWatched] = useLocalStorage([], "watched");
   const { isLoading, error, movies } = useMovies(
