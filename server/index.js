@@ -17,8 +17,10 @@ app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use("/auth", UserRouter);
 
-mongoose.connect("mongodb://127.0.0.1:27017/authentication");
+mongoose.connect(
+  `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`
+);
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 4000, () => {
   console.log("Sever is Running");
 });
