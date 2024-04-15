@@ -7,7 +7,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 
 const corsOptions = {
-  origin: "http://localhost:3006",
+  origin: "https://mern-stack-usepopcorn-1.onrender.com",
   credentials: true,
 };
 
