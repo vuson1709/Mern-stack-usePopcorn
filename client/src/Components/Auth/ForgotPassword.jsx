@@ -13,9 +13,12 @@ export default function ForgotPassword() {
 
   function handleSubmitForm(e) {
     e.preventDefault();
-    Axios.post("http://localhost:3000/auth/forgot-password", {
-      email,
-    })
+    Axios.post(
+      "https://mern-stack-usepopcorn.onrender.com/auth/forgot-password",
+      {
+        email,
+      }
+    )
       .then((res) => {
         if (res.data.status) {
           alert("check your email for reset password link");

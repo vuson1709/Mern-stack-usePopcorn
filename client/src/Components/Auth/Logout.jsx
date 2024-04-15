@@ -4,7 +4,7 @@ export default function Logout() {
   axios.defaults.withCredentials = true;
   function handleLogout() {
     axios
-      .get("http://localhost:3000/auth/logout")
+      .get("https://mern-stack-usepopcorn.onrender.com/auth/logout")
       .then((res) => {
         if (res.data.status) {
           console.log(res.data);

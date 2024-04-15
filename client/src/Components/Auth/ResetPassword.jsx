@@ -15,9 +15,12 @@ export default function ResetPassword() {
   function handleSubmitForm(e) {
     e.preventDefault();
     console.log(1);
-    Axios.post("http://localhost:3000/auth/reset-password/" + token, {
-      password,
-    })
+    Axios.post(
+      "https://mern-stack-usepopcorn.onrender.com/auth/reset-password/" + token,
+      {
+        password,
+      }
+    )
       .then((res) => {
         if (res.data.status) {
           navigate("/login");

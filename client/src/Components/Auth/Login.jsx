@@ -21,7 +21,7 @@ export default function Login() {
 
   function handleSubmitForm(e) {
     e.preventDefault();
-    Axios.post("http://localhost:3000/auth/login", {
+    Axios.post("https://mern-stack-usepopcorn.onrender.com/auth/login", {
       email,
       password,
     })

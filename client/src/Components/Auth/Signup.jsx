@@ -17,7 +17,7 @@ export default function Signup() {
     // Prevent when user not enter
     if (!username || !email || !password) return;
 
-    Axios.post("http://localhost:3000/auth/signup", {
+    Axios.post("https://mern-stack-usepopcorn.onrender.com/auth/signup", {
       username,
       email,
       password,
